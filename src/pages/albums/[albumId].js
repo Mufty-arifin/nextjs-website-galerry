@@ -51,7 +51,7 @@ const AlbumDetail = ({ photos }) => {
           key={i}
           onClick={() => handlePageClick(i)}
           className={`mx-2 cursor-pointer ${
-            currentPage === i ? "font-bold" : ""
+            currentPage === i ? "font-extrabold" : ""
           }`}
         >
           {i}
@@ -66,12 +66,12 @@ const AlbumDetail = ({ photos }) => {
 
   return (
     <div className="p-6 overflow-hidden ">
-      <h1 className="text-center text-xl font-bold md:text-3xl md:mt-12 mb-10">
+      <h1 className="text-center text-xl text-white font-bold md:text-3xl md:mt-12 mb-10">
         Album Detail
       </h1>
-       {/* Back Button */}
-       <Link href="/">
-        <p className="text-blue-500 mb-4 block text-center hover:underline">
+      {/* Back Button */}
+      <Link href="/">
+        <p className="text-white mb-4 block text-center w-40 mx-auto hover:translate-x-4 hover:duration-500">
           &larr; Back to Albums
         </p>
       </Link>
@@ -89,7 +89,9 @@ const AlbumDetail = ({ photos }) => {
               height={150}
               className="mx-auto mb-2 h-40 rounded-lg shadow-md"
             />
-            <h2 className="text-center text-lg font-semibold">{photo.title}</h2>
+            <h2 className="text-center text-lg font-semibold text-white">
+              {photo.title}
+            </h2>
             <a
               className="bg-blue-500 mt-auto hover:bg-blue-800 text-white p-3 text-center transition-all duration-500 block rounded-md"
               href={photo.url}
@@ -109,7 +111,9 @@ const AlbumDetail = ({ photos }) => {
         >
           Prev
         </button>
-        <div className="flex items-center space-x-2">{getPageNumbers()}</div>
+        <div className="flex items-center space-x-2 text-white">
+          {getPageNumbers()}
+        </div>
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}

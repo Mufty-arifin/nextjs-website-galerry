@@ -38,7 +38,7 @@ export default function Page({ albums }) {
           key={i}
           onClick={() => handlePageClick(i)}
           className={`mx-2 cursor-pointer ${
-            currentPage === i ? "font-bold" : ""
+            currentPage === i ? "font-extrabold" : ""
           }`}
         >
           {i}
@@ -54,7 +54,7 @@ export default function Page({ albums }) {
 
   return (
     <div className="p-5 overflow-hidden" >
-      <h1 className="text-4xl text-center text-gray-800 font-bold">HomePage</h1>
+      <h1 className="text-4xl text-center text-white font-bold">HomePage</h1>
 
       {/* Card Album */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-5 md:pt-10 lg:p-16 place-items-center gap-5 h-[600px]">
@@ -85,7 +85,7 @@ export default function Page({ albums }) {
         >
           Prev
         </button>
-        <div className="flex items-center space-x-2">{getPageNumbers()}</div>
+        <div className="flex items-center text-white space-x-2">{getPageNumbers()}</div>
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
